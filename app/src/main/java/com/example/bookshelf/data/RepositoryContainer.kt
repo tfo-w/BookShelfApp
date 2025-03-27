@@ -3,13 +3,12 @@ package com.example.bookshelf.data
 import com.example.bookshelf.network.BookService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
-interface AppContainer {
+interface RepositoryContainer {
     val booksRepository: BooksRepository
 }
 
-class DefaultAppContainer : AppContainer {
+class DefaultRepositoryContainer : RepositoryContainer {
     private val BASE_URL = "https://www.googleapis.com/books/v1/"
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
